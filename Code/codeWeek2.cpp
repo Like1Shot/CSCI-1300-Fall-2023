@@ -1,29 +1,56 @@
 #include <iostream>
 #include <string>
-// This code will be updated for Friday! We will only cover a portion of it on Wednesday
+
+/* ===== Auto Format Your Code! ==== */
+    // On Windows : Shift + Alt + F
+    // On MAC OS: command + k + f
+    // On Ubuntu : Ctrl + Shift + I
+// However, it is a good practice to format your code the right way by your own.
+// A cheatsheet will be posted for you soon for shortcut keys that are good to know!
+
+// Tip: if you want to indent a specific chunk of code, highlight the lines and do Command + ] or ctrl + ]
+// Tip: for multi-line commenting, use ( Comnmand + / ) or ( crtl + / )
 
 using namespace std;
 int main(){
-    /* ===== Booleans ===== */
+    /* ===== Booleans ===== */ 
+/*
     int x = 0;
     cin >> x;
-
     // If x is a negative value, our bool type varaible is_negative will be 1 (true)
     // If x is a positive or equal to 0, is_negative will be 0 (false)
     bool is_negative = x < 0;
     cout << is_negative << endl;
-    /*
+*/
+
+    /* ===== Relational Operators =====
         Less than: a < b
         Less than or equal to: a <= b
         Greater than: a > b
         Greater than or Equal to: a >= b
-        Equal to: a == b
+        Equal to: a == b  (Different from a = b, assign the value in b to a)
         Not Equal to: a != b
     */
+
+
     /* ===== String type ===== */
     // Use double quotes for strings and single quotes to store a single character.
     // "A" is the equivalent of 'A' with '\0' (NULL character which is the equivalent of an integer 0)
-    /*
+/*
+    string str = "A";
+    char c = 'A';
+    cout << "Strings and Characters(char) are different!" << endl;
+    cout << "Our String type variable \"str\" has a \"NULL character after \"A\"" << endl;
+    cout << "check the ASCII table: https://www.asciitable.com" << endl;
+    cout << "\"A\" is equal to " << (int)str[0] << " in the ASCII table "
+         << "and when we access the next element of our str variable, we get " << (int)str[1] << endl << endl;
+    // char takes up 1 byte (8 bits) of memory, therefore you can only store 2^8 = 256 different characters
+    // our ASCII table has 0 ~ 127 characters and the extended ASCII codes shows the 128 ~ 255 characters.
+    // We will learn more about the string class(std::string) later.
+*/
+
+    /* ===== Grading Example from Wednesday Lecture ===== */
+/*
     int point = 0;
     string grade = "A+";
 
@@ -31,10 +58,13 @@ int main(){
     cin >> point;
 
     if (point < 0 || point > 100) {
+        // logical AND = &&
+        // logical OR = || 
         cout << "Enter an integer between 0 and 100 (inclusive): " << endl;
-        return 1;
+        return 1; // We will discuss more about why we returned 1 here when we learn about functions!
+        // For now, just remember that for abnormal executions of a code, we return a non-zero value.
     }
-    else {
+    else { // example of a nested if, else-if, else
         if (point >= 93) {
             grade = "A+";
             cout << "Your grade is: " << grade << endl;
@@ -59,71 +89,75 @@ int main(){
             cout << "You can do better than that!" << endl;
         }
     }
-    */
-    /*
-    int point = 0;
-    char grade = 'F';
-    
-    cout << "Enter your points (integer between 0 and 100): ";
-    cin >> point;
+*/
+    int temp = 0;
+    // ===== Constant Variables! ====== //
+    // Assume that we are at sea level and the boiling, freezing tempuratue doesn't change!
+    const int BOIL_TEMP = 100; // This is how to use constant variables!
+    const int FREEZE_TEMP = 0; // Use all CAPITAL LETTERS for constant variables.
+    string status = "Liquid";
 
-    if (point < 0 || point > 100) {
-        cout << "Enter an integer between 0 and 100 (inclusive): " << endl;
-        return 1;
+    cout << "Enter the temperature: ";
+    cin >> temp;
+
+    // Using AND &&
+    if (temp > BOIL_TEMP && temp < FREEZE_TEMP){
+        status = "Liquid";
     }
     else {
-        if (point >= 93) {
-            grade = 'A';
-            cout << "Your grade is: " << grade << endl;
-        }
-        else if (point >= 83) {
-            grade = 'B';
-            cout << "Your grade is: " << grade << endl;
-        }
-        else if (point >= 73) {
-            grade = 'C';
-            cout << "Your grade is: " << grade << endl;
-        }
-        else if (point >= 63) {
-            grade = 'D';
-            cout << "Your grade is: " << grade << endl;
+        status = "Not Liquid";
+    }
+    cout << status << endl;
+/*    
+    // Using OR ||
+    if (temp <= FREEZE_TEMP || temp >= BOIL_TEMP) {
+        status = "Not Liquid";
+    }
+    else {
+        status = "Liquid";
+    }
+    cout << status << endl;
+*/
+
+// ===== Nested if, else-if, else ===== //
+// =====       Tax Problem         =====// // Textbook page 76
+    const double RATE1 = 0.10;
+    const double RATE2 = 0.25;
+    const double RATE1_SINGLE_LIMIT = 32000;
+    const double RATE1_MARRIED_LIMIT = 64000;
+
+    double tax1 = 0;
+    double tax2 = 0;
+
+    double income;
+    cout << "Please enter your income: ";
+    cin >> income;
+
+    cout << "Please enter s for single, m for married: ";
+    string marital_status;
+    cin >> marital_status;
+
+    if (marital_status == "s") {
+        if (income <= RATE1_SINGLE_LIMIT) {
+            tax1 = RATE1 * income;
         }
         else {
-            cout << "Your grade is: " << grade << endl;
+            tax1 = RATE1 * RATE1_SINGLE_LIMIT;
+            tax2 = RATE2 * (income - RATE1_SINGLE_LIMIT);
         }
-    } */
-    // Tip: if you want to indent a specific chunk of code, highlight the lines and do Command + ] or ctrl + ]
-    // Tip: for multi-line commenting, use ( Comnmand + / ) or ( crtl + / )
-/*
-Write a code that converts a user inputed seconds (input must be greater than zero)
-to the number of hours, minuites, and seconds. Use the if, else statement to validate user input.
-*/
-
-/*
-    int sec = 0;
-    int min = 0;
-    int hour = 0;
-    
-    // Ask the user to input the number of seconds
-    cout << "Enter the number of seconds: ";
-    cin >> sec;
-
-    // Input value should be greater than or equal to 0
-    if (sec < 0){ // Any value less than 0 will be our abnormal case!
-        cout << "Enter a number greater than or equal to 0" << endl;
-        return 1; // remember what I have said about returning non-zero values!
     }
     else {
-        hour = sec / (60 * 60); 
-        sec = sec % 3600;
-
-        min = sec / 60;
-        sec = sec % 60;
-
-        // Print out the converted minutes and seconds
-        cout << sec << " seconds is: " << min << " minuites and " << sec << " seconds." << endl; 
+        if (income <= RATE1_MARRIED_LIMIT) {
+            tax1 = RATE1 * income;
+        }
+        else {
+            tax1 = RATE1 * RATE1_MARRIED_LIMIT;
+            tax2 = RATE2 * (income - RATE1_MARRIED_LIMIT);
+        }
     }
-*/
-    return 0; // a normal exicution or exit of a main will return 0.
-}
+    double total_tax = tax1 + tax2;
 
+    cout << "The tax is $" << total_tax << endl;
+    
+    return 0; // a normal execution or exit of a main will return 0.
+}
