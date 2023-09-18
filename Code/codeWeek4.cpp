@@ -13,7 +13,7 @@ int main(void)
     // Recall from week 2 that these two are not the same thing!
     cout << "It looks like ch and str are the same but, a string ends with a NULL character. " << endl
          << "If we access the first element of the string we get the same: " << str[0] << endl;
-    cout << "But, when we see the next element: " << str[1] << endl;
+    cout << "But, when we see the next element: " << (int)str[1] << endl;
 
     cout << "And our character variable chr doesnt have that: " << ch << endl;
     
