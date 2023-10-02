@@ -3,13 +3,12 @@
 using namespace std;
 /* ===== Midterm #1 review requests ===== */
 /* ===== Monday =====*/
-// Return Value VS Cout
-// how to use Assertions and why? 
-// operator precedence
+// Return Value VS Cout --> Scroll down to end of code to see
+// More on how to use Assertions and why? 
+// operator precedence --> Leap Year Question + De Morgan's Law
 
 /* ===== Wednesday =====*/
 // Do while
-
 
 // A leap year is a year that is evenly divisible by 4,
 // except for years that are divisible by 100 but not by 400.
