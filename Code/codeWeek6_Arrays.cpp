@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cassert>
+void printArray(int arr[], int size);
 double getAverage(int arr[], int size);
 double getLargest(int arr[], int size);
 using namespace std;
@@ -45,10 +46,21 @@ int main(void)
         }
     }
     // Arrays are passed by reference!!
-    cout << "The average of the \"square\" array is: " << getAverage(squares, size) << endl;
+    cout << "square array: ";
+    printArray(square, 5);
+    cout << "The average of the \"square\" array is: " << getAverage(squares, 5) << endl << endl;
+
+    cout << "values array: ";
+    printArray(values, size);
     cout << "The largest value within the \"values\" array is: " << getLargest(values, size) << endl;
 
     return 0;
+}
+void printArray(int arr[], int size) {
+    for (int i=0; i<size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 }
 double getAverage(int arr[], int size) {    // Arrays are passed by reference!!
     assert(size > 0);  // covers for invalid inputs. size of array must b non-negative!
