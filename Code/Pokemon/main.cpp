@@ -13,7 +13,7 @@ Compile this file using "g++ -std=c++17 -Wall -Wpedantic -Werror main.cpp pokemo
 int main() {
 
     // define a class object here
-    Pokemon obj1; // What type of construtor is called here... think about it
+    Pokemon obj1; // This will use the default constructor
 
     // display the object attributes using it's getters
     cout << obj1.getName() << "|" << obj1.getId() << endl;
