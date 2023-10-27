@@ -16,20 +16,20 @@ int main() {
     Pokemon obj1; // This will use the default constructor
 
     // display the object attributes using it's getters
-    cout << obj1.getName() << "|" << obj1.getId() << endl;
+    cout << obj1.getName() << ": " << obj1.getId() << endl;
 
     // change the value of attributes for obj1 using it's setter
     obj1.setName("pikachu");
     obj1.setId(25);
 
     // display the object attributes using it's getters
-    cout << obj1.getName() << "|" << obj1.getId() << endl;
+    cout << obj1.getName() << ": " << obj1.getId() << endl;
 
     // create another object, but this time use a parameterized constructor
     Pokemon obj2("meowth", 50); // this is creating an object and passing the values that the attributes should have too at the same time
 
     // display the object attributes using it's getters
-    cout << obj2.getName() << "|" << obj2.getId() << endl;
+    cout << obj2.getName() << ": " << obj2.getId() << endl;
     
     return 0;
 }
